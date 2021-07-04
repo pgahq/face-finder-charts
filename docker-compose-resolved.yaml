@@ -1,0 +1,57 @@
+services:
+  compreface-admin:
+    container_name: compreface-admin
+    depends_on:
+    - compreface-api
+    - compreface-postgres-db
+    environment:
+      ADMIN_JAVA_OPTS: -Xmx8g
+      EMAIL_FROM: ''
+      EMAIL_HOST: smtp.gmail.com
+      EMAIL_PASSWORD: ''
+      EMAIL_USERNAME: ''
+      ENABLE_EMAIL_SERVER: "false"
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_URL: jdbc:postgresql://compreface-postgres-db:5432/frs
+      POSTGRES_USER: postgres
+      SPRING_PROFILES_ACTIVE: dev
+    image: exadel/compreface-admin:0.5.1
+  compreface-api:
+    container_name: compreface-api
+    depends_on:
+    - compreface-postgres-db
+    environment:
+      API_JAVA_OPTS: -Xmx8g
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_URL: jdbc:postgresql://compreface-postgres-db:5432/frs
+      POSTGRES_USER: postgres
+      SAVE_IMAGES_TO_DB: "true"
+      SPRING_PROFILES_ACTIVE: dev
+    image: exadel/compreface-api:0.5.1
+  compreface-core:
+    container_name: compreface-core
+    environment:
+      ML_PORT: '3000'
+    image: exadel/compreface-core:0.5.1
+  compreface-fe:
+    container_name: compreface-ui
+    depends_on:
+    - compreface-admin
+    - compreface-api
+    image: exadel/compreface-fe:0.5.1
+    ports:
+    - published: 8000
+      target: 80
+  compreface-postgres-db:
+    container_name: compreface-postgres-db
+    environment:
+      POSTGRES_DB: frs
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    image: postgres:11.5
+    volumes:
+    - postgres-data:/var/lib/postgresql/data:rw
+version: '3.4'
+volumes:
+  postgres-data: {}
+
