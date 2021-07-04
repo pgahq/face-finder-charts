@@ -1,8 +1,0 @@
-name: docker-compose-resolved
-description: A generated Helm Chart for docker-compose-resolved from Skippbox Kompose
-version: 0.0.1
-apiVersion: v1
-keywords:
-  - docker-compose-resolved
-sources:
-home:
