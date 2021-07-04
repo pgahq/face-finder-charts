@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: 'compreface-configmap'
+data:
+  ADMIN_JAVA_OPTS: {{ .Values.env.configmap.ADMIN_JAVA_OPTS | quote }}
+  EMAIL_FROM: {{ .Values.env.configmap.EMAIL_FROM | quote }}
+  EMAIL_HOST: {{ .Values.env.configmap.EMAIL_HOST | quote }}
+  ENABLE_EMAIL_SERVER: {{ .Values.env.configmap.ENABLE_EMAIL_SERVER | quote }}
+  SPRING_PROFILES_ACTIVE: {{ .Values.env.configmap.SPRING_PROFILES_ACTIVE | quote }}
+  SAVE_IMAGES_TO_DB: {{ .Values.env.configmap.SAVE_IMAGES_TO_DB | quote }}
+  ML_PORT: {{ .Values.env.configmap.ML_PORT | quote }}

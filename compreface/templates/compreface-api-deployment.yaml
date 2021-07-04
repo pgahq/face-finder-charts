@@ -24,21 +24,13 @@ spec:
         io.kompose.service: compreface-api
     spec:
       containers:
-        - env:
-            - name: API_JAVA_OPTS
-              value: -Xmx8g
-            - name: POSTGRES_PASSWORD
-              value: postgres
-            - name: POSTGRES_URL
-              value: jdbc:postgresql://compreface-postgres-db:5432/frs
-            - name: POSTGRES_USER
-              value: postgres
-            - name: SAVE_IMAGES_TO_DB
-              value: "true"
-            - name: SPRING_PROFILES_ACTIVE
-              value: dev
-          image: exadel/compreface-api:0.5.1
+        - image: exadel/compreface-api:0.5.1
           name: compreface-api
           resources: {}
+          envFrom:
+            - configMapRef:
+                name: 'compreface-configmap'
+            - secretRef:
+                name: 'compreface-secret'
       restartPolicy: Always
 status: {}

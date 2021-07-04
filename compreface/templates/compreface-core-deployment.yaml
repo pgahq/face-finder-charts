@@ -24,11 +24,13 @@ spec:
         io.kompose.service: compreface-core
     spec:
       containers:
-        - env:
-            - name: ML_PORT
-              value: "3000"
-          image: exadel/compreface-core:0.5.1
+        - image: exadel/compreface-core:0.5.1
           name: compreface-core
+          envFrom:
+            - configMapRef:
+                name: 'compreface-configmap'
+            - secretRef:
+                name: 'compreface-secret'
           resources: {}
       restartPolicy: Always
 status: {}

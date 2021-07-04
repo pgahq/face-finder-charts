@@ -28,6 +28,11 @@ spec:
           name: compreface-ui
           ports:
             - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: 'compreface-configmap'
+            - secretRef:
+                name: 'compreface-secret'
           resources: {}
       restartPolicy: Always
 status: {}

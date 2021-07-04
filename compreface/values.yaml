@@ -1,0 +1,16 @@
+env:
+  configmap:
+    ADMIN_JAVA_OPTS: -Xmx8g
+    EMAIL_FROM: k
+    EMAIL_HOST: smtp.gmail.com
+    ENABLE_EMAIL_SERVER: "false"
+    SPRING_PROFILES_ACTIVE: dev
+    SAVE_IMAGES_TO_DB: "true"
+    ML_PORT: "3000"
+  secret:
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_URL: jdbc:postgresql://10.226.64.3:5432/compreface
+    POSTGRES_USER: postgres
+    EMAIL_PASSWORD: ''''
+    EMAIL_USERNAME: ''''
+    
