@@ -18,12 +18,18 @@ helm ls
 ```
 ![alt text](snapshots/releases.png)
 - Use kubectl to manage resources on GKE
-  - Services
-  ![alt text](snapshots/svc.png)
-  - Deployments
-  ![alt text](snapshots/deploys.png)
-  - Pods
-  ![alt text](snapshots/pods.png)
+```
+kubectl get svc
+```
+![alt text](snapshots/svc.png)
+```
+kubectl get deployments
+```
+![alt text](snapshots/deploys.png)
+```
+kubectl get pods
+```
+![alt text](snapshots/pods.png)
 
 ## What we have
 1. Compreface Service
