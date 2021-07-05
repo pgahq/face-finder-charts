@@ -1,7 +1,7 @@
 env:
   configmap:
     ADMIN_JAVA_OPTS: -Xmx8g
-    EMAIL_FROM: k
+    EMAIL_FROM: ''''
     EMAIL_HOST: smtp.gmail.com
     ENABLE_EMAIL_SERVER: "false"
     SPRING_PROFILES_ACTIVE: dev
