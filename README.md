@@ -1,3 +1,6 @@
+## Problems
+- Helm helps you manage Kubernetes applications.
+- Helm Charts help you define, install, and upgrade applications.
 ## Set up local environment
 - Install kubectl https://kubernetes.io/docs/tasks/tools/
 - Install helm https://helm.sh/docs/intro/install/
@@ -13,8 +16,14 @@ gcloud container clusters get-credentials tf-main --zone=us-central1
 ```
 helm ls
 ```
+![alt text](snapshots/releases.png)
 - Use kubectl to manage resources on GKE
-```
-kubectl get pod
-kubectl get svc
-```
+  - Services
+  ![alt text](snapshots/svc.png)
+  - Deployments
+  ![alt text](snapshots/deploys.png)
+  - Pods
+  ![alt text](snapshots/pods.png)
+
+## What we have
+1. Compreface Service
