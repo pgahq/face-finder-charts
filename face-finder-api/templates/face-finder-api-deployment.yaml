@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '{{ template "app.name" . }}-deployment'
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: '{{ template "app.name" . }}'
+  template:
+    metadata:
+      labels:
+        app: {{ template "app.name" . }}
+      annotations:
+        checksum/configmap: {{ include (print $.Template.BasePath "/face-finder-api-configmap.yaml") . | sha256sum }}
+        checksum/secret: {{ include (print $.Template.BasePath "/face-finder-api-secret.yaml") . | sha256sum }}
+    spec:
+      containers:
+        - name: {{ template "app.name" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: '{{ template "app.name" . }}-configmap'
+            - secretRef:
+                name: '{{ template "app.name" . }}-secret'

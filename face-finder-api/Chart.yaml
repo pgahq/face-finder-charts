@@ -1,0 +1,4 @@
+apiVersion: v2
+name: face-finder-api
+description: A Helm chart for face-finder-api
+version: v1.0.0

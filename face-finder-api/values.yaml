@@ -1,0 +1,20 @@
+app:
+  name: face-finder-api
+image:
+  repository: hocx3/face-finder-api
+  tag: v1.0.0
+  pullPolicy: Always
+
+replicaCount: 1
+
+env:
+  configmap:
+    TZ: UTC
+    EXPIRES_IN: 3600s
+    TYPEORM_CONNECTION: postgres
+    TYPEORM_LOGGING: true
+    TYPEORM_MIGRATIONS: dist/migration/*{.ts,.js}
+    TYPEORM_MIGRATIONS_DIR: src/migration
+  secret:
+    JWT_SECRET: ''
+    TYPEORM_URL: ''
