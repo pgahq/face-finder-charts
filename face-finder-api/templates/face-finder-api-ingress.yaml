@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: '{{ template "app.name" . }}-ingress'
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+spec:
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /graphql
+            backend:
+              service:
+                name: '{{ template "app.name" . }}-service'
+                port: 
+                  number: 3000
+            pathType: ImplementationSpecific

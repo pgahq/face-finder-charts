@@ -7,6 +7,9 @@ image:
 
 replicaCount: 1
 
+ingress:
+  host: "facefinder.dev.pga.com"
+
 env:
   configmap:
     TZ: UTC

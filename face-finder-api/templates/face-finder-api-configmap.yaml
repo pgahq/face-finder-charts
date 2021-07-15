@@ -1,11 +1,10 @@
+{{- if .Values.env.configmap }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: '{{ template "app.name" . }}-configmap'
+  name: {{ template "app.name" . }}-configmap
 data:
-  TZ: {{ .Values.env.configmap.TZ | quote }}
-  EXPIRES_IN: {{ .Values.env.configmap.EXPIRES_IN | quote }}
-  TYPEORM_CONNECTION: {{ .Values.env.configmap.TYPEORM_CONNECTION | quote }}
-  TYPEORM_LOGGING: {{ .Values.env.configmap.TYPEORM_LOGGING | quote }}
-  TYPEORM_MIGRATIONS: {{ .Values.env.configmap.TYPEORM_MIGRATIONS | quote }}
-  TYPEORM_MIGRATIONS_DIR: {{ .Values.env.configmap.TYPEORM_MIGRATIONS_DIR | quote }}
+{{- range $key, $val := $.Values.env.configmap }}
+  {{ $key | quote }}: {{ $val | quote }}
+{{- end }}
+{{- end }}
