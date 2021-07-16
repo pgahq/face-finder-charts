@@ -15,5 +15,5 @@ spec:
               service:
                 name: '{{ template "app.name" . }}-service'
                 port: 
-                  number: 3000
+                  number: 80
             pathType: ImplementationSpecific
