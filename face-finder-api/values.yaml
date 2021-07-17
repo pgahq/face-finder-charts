@@ -1,9 +1,9 @@
 app:
   name: face-finder-api
 image:
-  repository: hocx3/face-finder-api
-  tag: v1.0.0
-  pullPolicy: Always
+  repository:
+  tag: 
+  pullPolicy:
 
 replicaCount: 1
 
@@ -19,6 +19,8 @@ env:
     TYPEORM_MIGRATIONS: dist/migration/*.js
     TYPEORM_MIGRATIONS_DIR: src/migration
     TYPEORM_MIGRATIONS_RUN: true
+    GRAPHQL_PLAYGROUND: true
+    GRAPHQL_INTROSPECTION: true
   secret:
     JWT_SECRET: ''
     TYPEORM_URL: ''
