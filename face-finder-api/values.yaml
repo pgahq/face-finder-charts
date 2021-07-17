@@ -16,8 +16,9 @@ env:
     EXPIRES_IN: 3600s
     TYPEORM_CONNECTION: postgres
     TYPEORM_LOGGING: true
-    TYPEORM_MIGRATIONS: dist/migration/*{.ts,.js}
+    TYPEORM_MIGRATIONS: dist/migration/*.js
     TYPEORM_MIGRATIONS_DIR: src/migration
+    TYPEORM_MIGRATIONS_RUN: true
   secret:
     JWT_SECRET: ''
     TYPEORM_URL: ''
