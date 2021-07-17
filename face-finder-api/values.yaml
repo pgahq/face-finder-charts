@@ -1,0 +1,26 @@
+app:
+  name: face-finder-api
+image:
+  repository:
+  tag: 
+  pullPolicy:
+
+replicaCount: 1
+
+ingress:
+  host: "facefinder.dev.pga.com"
+
+env:
+  configmap:
+    TZ: UTC
+    EXPIRES_IN: 3600s
+    TYPEORM_CONNECTION: postgres
+    TYPEORM_LOGGING: true
+    TYPEORM_MIGRATIONS: dist/migration/*.js
+    TYPEORM_MIGRATIONS_DIR: src/migration
+    TYPEORM_MIGRATIONS_RUN: true
+    GRAPHQL_PLAYGROUND: true
+    GRAPHQL_INTROSPECTION: true
+  secret:
+    JWT_SECRET: ''
+    TYPEORM_URL: ''
