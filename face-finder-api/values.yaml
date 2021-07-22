@@ -20,3 +20,6 @@ env:
     TYPEORM_MIGRATIONS_RUN: true
     GRAPHQL_PLAYGROUND: true
     GRAPHQL_INTROSPECTION: true
+  # secret:
+    # JWT_SECRET: ''
+    # TYPEORM_URL: ''
