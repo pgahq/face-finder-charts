@@ -1,8 +1,7 @@
 app:
   name: face-finder-api
 image:
-  repository: us.gcr.io/face-finder-318218/pgahq/face-finder-api
-  tag: 6e950f1adab9a7cebce4123ced6f68ea1bc12d1e
+  name: us.gcr.io/face-finder-318218/pgahq/face-finder-api:6e950f1adab9a7cebce4123ced6f68ea1bc12d1e
   pullPolicy:
 
 replicaCount: 3
@@ -21,6 +20,3 @@ env:
     TYPEORM_MIGRATIONS_RUN: true
     GRAPHQL_PLAYGROUND: true
     GRAPHQL_INTROSPECTION: true
-  secret:
-    JWT_SECRET: ''
-    TYPEORM_URL: ''
