@@ -1,8 +1,8 @@
 app:
   name: face-finder-api
 image:
-  repository:
-  tag: 
+  repository: us.gcr.io/face-finder-318218/pgahq/face-finder-api
+  tag: 6e950f1adab9a7cebce4123ced6f68ea1bc12d1e
   pullPolicy:
 
 replicaCount: 1
