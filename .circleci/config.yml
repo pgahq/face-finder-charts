@@ -16,6 +16,7 @@ jobs:
           helm-version: v3.6.2
           chart: ./face-finder-api
           release-name: face-finder-api
+          values: face-finder-api/values.yaml
           reuse-values: true
 
 workflows:
