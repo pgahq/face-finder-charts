@@ -8,6 +8,7 @@ jobs:
   deploy:
     executor: gcp-gke/default
     steps:
+      - checkout
       - gcp-gke/update-kubeconfig-with-credentials:
           cluster: tf-main
           perform-login: true
