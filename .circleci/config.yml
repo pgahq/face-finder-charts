@@ -21,7 +21,7 @@ jobs:
 workflows:
   deploy:
     jobs:
-      - deploy
-#          filters:
-#            branches:
-#              only: main
+      - deploy:
+          filters:
+            branches:
+              only: main
