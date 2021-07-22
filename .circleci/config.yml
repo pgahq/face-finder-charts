@@ -10,6 +10,7 @@ jobs:
     steps:
       - gcp-gke/update-kubeconfig-with-credentials:
           cluster: tf-main
+          perform-login: true
       - helm/upgrade-helm-chart:
           chart: ./face-finder-api
           helm-version: v3.6.2
