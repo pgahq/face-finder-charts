@@ -8,9 +8,20 @@ jobs:
   deploy:
     executor: gcp-gke/default
     steps:
+      - checkout
       - gcp-gke/update-kubeconfig-with-credentials:
           cluster: tf-main
+          perform-login: true
       - helm/upgrade-helm-chart:
-          chart: ./face-finder-api
           helm-version: v3.6.2
+          chart: ./face-finder-api
+          release-name: face-finder-api
           reuse-values: true
+
+workflows:
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: main
