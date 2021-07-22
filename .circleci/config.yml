@@ -14,7 +14,7 @@ jobs:
           perform-login: true
       - helm/upgrade-helm-chart:
           helm-version: v3.6.2
-          chart: face-finder-api/
+          chart: ./face-finder-api
           release-name: face-finder-api
           reuse-values: true
 
