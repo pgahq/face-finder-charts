@@ -1,7 +1,7 @@
 app:
   name: face-finder-api
 image:
-  name: us.gcr.io/face-finder-318218/pgahq/face-finder-api:6e950f1adab9a7cebce4123ced6f68ea1bc12d1e
+  name: us.gcr.io/face-finder-318218/pgahq/face-finder-api:9beea7dc7614a41ddabc2edb8b85b8178f880ce8
   pullPolicy:
 
 replicaCount: 3
@@ -20,6 +20,9 @@ env:
     TYPEORM_MIGRATIONS_RUN: true
     GRAPHQL_PLAYGROUND: true
     GRAPHQL_INTROSPECTION: true
+    COMPREFACE_API_KEY: '00000000-0000-0000-0000-000000000002'
+    COMPREFACE_HOST: 'http://compreface-fe:8000'
+    COMPREFACE_SIMILARITY_THRESHOLD: 0.9
     QUEUE_HOST: '10.245.86.131'
     QUEUE_PORT: 6379
     GOOGLE_CLOUD_PROJECT_ID: face-finder-318218

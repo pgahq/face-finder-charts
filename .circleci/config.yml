@@ -1,0 +1,28 @@
+version: 2.1
+
+orbs:
+  gcp-gke: circleci/gcp-gke@1.3.0
+  helm: circleci/helm@1.2.0
+
+jobs:
+  deploy:
+    executor: gcp-gke/default
+    steps:
+      - checkout
+      - gcp-gke/update-kubeconfig-with-credentials:
+          cluster: tf-main
+          perform-login: true
+      - helm/upgrade-helm-chart:
+          helm-version: v3.6.2
+          chart: ./face-finder-api
+          release-name: face-finder-api
+          values: face-finder-api/values.yaml
+          reuse-values: true
+
+workflows:
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: main
