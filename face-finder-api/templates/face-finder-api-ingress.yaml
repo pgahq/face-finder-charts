@@ -17,7 +17,7 @@ spec:
                 port: 
                   number: 80
             pathType: ImplementationSpecific
-   tls:
-     - hosts:
-       - {{ .Values.ingress.host }}
-     secretName: facefinder-tls
+  tls:
+    - hosts:
+      - {{ .Values.ingress.host }}
+      secretName: facefinder-tls
