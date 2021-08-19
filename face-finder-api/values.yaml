@@ -31,4 +31,5 @@ env:
   #   JWT_SECRET: ''
   #   TYPEORM_URL: ''
   #   GOOGLE_CLOUD_CREDENTIALS: ''
+  #   API_KEY: ''
 
