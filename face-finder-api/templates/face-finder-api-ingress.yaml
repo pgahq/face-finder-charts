@@ -4,7 +4,7 @@ metadata:
   name: '{{ template "app.name" . }}-ingress'
   annotations:
     kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
+    cert-manager.io/issuer: lets-encrypt
 spec:
   rules:
     - host: {{ .Values.ingress.host }}
@@ -17,3 +17,7 @@ spec:
                 port: 
                   number: 80
             pathType: ImplementationSpecific
+  tls:
+    - hosts:
+      - {{ .Values.ingress.host }}
+      secretName: facefinder-tls
