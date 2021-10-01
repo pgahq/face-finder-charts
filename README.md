@@ -34,3 +34,4 @@ kubectl get pods
 ## What we have
 1. Compreface Service
 2. face-finder-api
+3. imgproxy
