@@ -27,9 +27,14 @@ env:
     QUEUE_PORT: 6379
     GOOGLE_CLOUD_PROJECT_ID: face-finder-318218
     GOOGLE_CLOUD_STORAGE_GALLERY_BUCKET: face-finder-storage
+    IMGPROXY_URL: 'static.facefinder.dev.pga.com'
+    MAILER_FROM: 'yourphotos@pga.com'
   # secret:
   #   JWT_SECRET: ''
   #   TYPEORM_URL: ''
   #   GOOGLE_CLOUD_CREDENTIALS: ''
   #   API_KEY: ''
+  #   SENDGRID_API_KEY
+  #   IMGPROXY_KEY: ''
+  #   IMGPROXY_SALT: ''
 
