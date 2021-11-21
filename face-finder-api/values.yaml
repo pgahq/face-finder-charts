@@ -1,7 +1,7 @@
 app:
   name: face-finder-api
 image:
-  name: us.gcr.io/face-finder-318218/pgahq/face-finder-api:9b62362d2a0f220e9a12bf6cd02021294e02b6d6
+  name: us.gcr.io/face-finder-318218/pgahq/face-finder-api:6f8e0e7f1201e8dd79f1d896590bfb559bab7a98
   pullPolicy:
 
 replicaCount: 3
